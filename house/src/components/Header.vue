@@ -13,11 +13,16 @@ function open() {
             <a href="/houses">Houses</a>
             <a href="/about">About</a>
         </div>
-        
+
         <button on:click="open()">
             <LogoDTT />
         </button>
     </header>
+
+    <div class="dropdown">
+        <a href="/houses">Houses</a>
+        <a href="/about">About</a>
+    </div>
 </template>
 
 <style scoped>
