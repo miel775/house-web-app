@@ -1,8 +1,25 @@
 <script setup>
+import { ref, computed } from 'vue'
 import LogoDTT from './icons/logoDTT.vue'
 
-function open(){
-  document.querySelector("dropdown").classList.toggle("open");
+// check on which path you are otherwise show the homepage
+const currentPath = ref(window.location.hash || '#/')
+
+window.addEventListener('hashchange', () => {
+    currentPath.value = window.location.hash
+})
+
+// check if houses is active
+const isHousesActive = computed(() =>
+  currentPath.value.startsWith('#/houses')
+)
+// check if about is active
+const isAboutActive = computed(() =>
+  currentPath.value.startsWith('#/about')
+)
+
+function toggleDropdown() {
+    document.querySelector(".dropdown").classList.toggle("open");
 }
 
 </script>
@@ -10,18 +27,23 @@ function open(){
 <template>
     <header>
         <div class="navigation-bar">
-            <a href="#/houses">Houses</a>
-            <a href="#/about">About</a>
+            <!-- class active is on when the currentpath is /houses -->
+      <a href="#/houses" :class="{ active: isHousesActive }">Houses</a>
+      <a href="#/about" :class="{ active: isAboutActive }">About</a>
         </div>
 
-        <button onclick="open()">
+        <div class="logo-icon">
+            <LogoDTT />
+        </div>
+
+        <button class="dropdownbutton" @click="toggleDropdown">
             <LogoDTT />
         </button>
     </header>
 
     <div class="dropdown">
-        <a href="#/houses">Houses</a>
-        <a href="#/about">About</a>
+      <a href="#/houses" :class="{ active: isHousesActive }">Houses</a>
+      <a href="#/about" :class="{ active: isAboutActive }">About</a>
     </div>
 </template>
 
@@ -63,14 +85,16 @@ a {
 }
 
 /* removing style button */
-button, input[type="submit"], input[type="reset"] {
-	background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+button,
+input[type="submit"],
+input[type="reset"] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
 }
 
 .dropdown {
@@ -81,7 +105,7 @@ button, input[type="submit"], input[type="reset"] {
     }
 }
 
-.dropdown.open {
+.open {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -89,4 +113,21 @@ button, input[type="submit"], input[type="reset"] {
     left: 0;
 }
 
+.logo-icon {
+    margin-right: 1em;
+
+    @media (max-width: 720px) {
+        display: none;
+    }
+}
+
+.dropdownbutton {
+    @media (min-width: 720px) {
+        display: none;
+    }
+}
+
+.active {
+    background-color: white;
+}
 </style>

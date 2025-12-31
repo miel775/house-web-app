@@ -68,8 +68,4 @@ header {
     flex-wrap: wrap;
   }
 }
-
-.dropdown {
-
-}
 </style>
