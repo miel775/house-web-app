@@ -1,8 +1,8 @@
 <script setup>
 import LogoDTT from './icons/logoDTT.vue'
 
-function open() {
-
+function open(){
+  document.querySelector("dropdown").classList.toggle("open");
 }
 
 </script>
@@ -10,18 +10,18 @@ function open() {
 <template>
     <header>
         <div class="navigation-bar">
-            <a href="/houses">Houses</a>
-            <a href="/about">About</a>
+            <a href="#/houses">Houses</a>
+            <a href="#/about">About</a>
         </div>
 
-        <button on:click="open()">
+        <button onclick="open()">
             <LogoDTT />
         </button>
     </header>
 
     <div class="dropdown">
-        <a href="/houses">Houses</a>
-        <a href="/about">About</a>
+        <a href="#/houses">Houses</a>
+        <a href="#/about">About</a>
     </div>
 </template>
 
@@ -71,6 +71,22 @@ button, input[type="submit"], input[type="reset"] {
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
+}
+
+.dropdown {
+    display: none;
+
+    a {
+        width: 100vw;
+    }
+}
+
+.dropdown.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100px;
+    left: 0;
 }
 
 </style>

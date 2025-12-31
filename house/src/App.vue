@@ -1,8 +1,12 @@
 <script setup>
 import { ref, computed } from 'vue'
-import Header from './components/Header.vue';
-import Houses from './houses.vue';
-import About from '.about.vue'
+
+import Header from './components/Header.vue'
+
+import Home from './Home.vue'
+import Houses from './houses.vue'
+import About from './about.vue'
+import NotFound from './NotFound.vue'
 
 // routing of the housing app
 const routes = {
@@ -18,15 +22,23 @@ window.addEventListener('hashchange', () => {
 })
 
 const currentView = computed(() => {
-  return routes[currentPath.value.slice(1) || '/'] || NotFound
+  return routes[currentPath.value.slice(1) || '#/'] || NotFound
 })
+
+
 
 </script>
 
 <template>
-  <Header> </Header>
+  <Header></Header>
+
+    <div class="dropdown" on:click="">
+        <a href="#/houses">Houses</a>
+        <a href="#/about">About</a>
+    </div>
   <main>
   </main>
+    <component :is="currentView" />
 </template>
 
 <style scoped>
@@ -55,5 +67,9 @@ header {
     place-items: flex-start;
     flex-wrap: wrap;
   }
+}
+
+.dropdown {
+
 }
 </style>
