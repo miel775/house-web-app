@@ -68,4 +68,9 @@ header {
     flex-wrap: wrap;
   }
 }
+
+main {
+  position: absolute;
+  top: 150px; 
+}
 </style>

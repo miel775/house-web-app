@@ -54,7 +54,7 @@ header {
     left: 0;
     width: 100vw;
     height: 100px;
-    background-color: #FF9B21;
+    background-color: var(--primary-color);
     display: flex;
     justify-content: space-between;
     border: black solid 1px;
@@ -79,7 +79,7 @@ header {
 a {
     color: black;
     width: fit-content;
-    background-color: #FFD6A4;
+    background-color: var(--primary-color-dark);
     padding: 1em;
     border: black solid 1px;
 }
@@ -128,6 +128,6 @@ input[type="reset"] {
 }
 
 .active {
-    background-color: white;
+    background-color: var(--primary-color-light);;
 }
 </style>

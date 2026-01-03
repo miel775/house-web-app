@@ -1,6 +1,9 @@
 :root {
   /* element colors */
+  --primary-color-light: #ffaca1;
   --primary-color: #EB5440;
+  --primary-color-dark: #ad392a;
+
   --secondairy-color: #4A4B4C;
   --tertairy-color: #E8E8E8;
   --tertrairy-color-dark: #C3C3C3;
@@ -61,7 +64,7 @@ h1 {
   font-family: 'Monsterrat Bold';
   font-size: 32px;
 
-  @media (min-width: 720px) {
+  @media (max-width: 720px) {
   font-size: 18px;
   }
 }
@@ -70,7 +73,7 @@ h2 {
   font-family: 'Monsterrat Bold';
   font-size: 22px;
 
-  @media (min-width: 720px) {
+  @media (max-width: 720px) {
     font-size: 14px;
   }
 }
@@ -83,7 +86,7 @@ h2 {
 }
 
 .inputfield.text {
-    @media (min-width: 720px) {
+    @media (max-width: 720px) {
       font-family: 'Monsterrat Semibold';
       font-size: 14px;
   }
@@ -141,6 +144,9 @@ input {
   }
 }
 
+main {
+  margin-top: 100px;
+}
 
 
 
