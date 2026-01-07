@@ -18,6 +18,10 @@ const isAboutActive = computed(() =>
   currentPath.value.startsWith('#/about')
 )
 
+const isHomeActive = computed(() =>
+  currentPath.value.includes('#/')
+)
+
 function toggleDropdown() {
     document.querySelector(".dropdown").classList.toggle("open");
 }
@@ -27,7 +31,7 @@ function toggleDropdown() {
 <template>
     <header>
         <div class="navigation-bar">
-            <!-- class active is on when the currentpath is /houses -->
+      <a href="#/" :class="{ active: isHomeActive }">Home</a>
       <a href="#/houses" :class="{ active: isHousesActive }">Houses</a>
       <a href="#/about" :class="{ active: isAboutActive }">About</a>
         </div>
@@ -42,6 +46,7 @@ function toggleDropdown() {
     </header>
 
     <div class="dropdown">
+      <a href="#/" :class="{ active: isHomeActive }">Home</a>
       <a href="#/houses" :class="{ active: isHousesActive }">Houses</a>
       <a href="#/about" :class="{ active: isAboutActive }">About</a>
     </div>
@@ -81,7 +86,9 @@ a {
     width: fit-content;
     background-color: var(--primary-color-dark);
     padding: 1em;
-    border: black solid 1px;
+    border: black solid 2px;
+    font-family: 'Monsterrat Bold';
+    text-decoration: none;
 }
 
 /* removing style button */
