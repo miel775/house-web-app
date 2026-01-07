@@ -4,9 +4,10 @@ import { ref, computed } from 'vue'
 import Header from './components/Header.vue'
 
 import Home from './Home.vue'
-import Houses from './houses.vue'
-import About from './about.vue'
+import Houses from './Houses.vue'
+import About from './About.vue'
 import NotFound from './NotFound.vue'
+import Detailpage from './components/slug.vue'
 
 // routing of the housing app
 const routes = {
@@ -32,7 +33,6 @@ const currentView = computed(() => {
 
 <template>
   <Header></Header>
-
     <div class="dropdown" on:click="">
         <a href="#/houses">Houses</a>
         <a href="#/about">About</a>

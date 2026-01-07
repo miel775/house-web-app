@@ -36,12 +36,9 @@ onMounted(async () => {
 
 <template>
     <main>
-        <div class="banner-home">
-        <div v-for="house in houses" :key="house.id">
-        <img :src="house.image" alt="House image" width="1800px">
-        </div>
-            
-        </div>
+<div class="banner-home" v-if="houses.length">
+  <img :src="houses[0].image" alt="House image">
+</div>
         <h1>Home</h1>
         <p>Welcome on the house page</p>
 
@@ -81,6 +78,5 @@ onMounted(async () => {
 
 .recommended-houses article {
     display: flex;
-
 }
 </style>

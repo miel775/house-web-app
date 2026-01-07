@@ -19,7 +19,7 @@ const isAboutActive = computed(() =>
 )
 
 const isHomeActive = computed(() =>
-  currentPath.value.includes('#/')
+  currentPath.value === ('#/')
 )
 
 function toggleDropdown() {
