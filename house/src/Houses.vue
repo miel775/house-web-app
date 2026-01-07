@@ -1,44 +1,48 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 
-const house = ref(null)
-const loading = ref(true)
+const houses = ref(null)
 const error = ref(null)
+const loading = ref(false)
 
 onMounted(async () => {
+  loading.value = true;
+  
   try {
     const response = await fetch(
-      'https://api.intern.d-tt.nl/api/houses/2',
+      'https://api.intern.d-tt.nl/api/houses',
       {
-        method: 'GET',
         headers: {
-          'X-Api-Key': '849-2_z6YJHb7KyxFhdlfsuQE5BDaqcr'
+          'X-Api-Key': 'nvmE37kpr-xfUcAejPoM6_hC2Xbui5WO'
         }
       }
     )
-
+    
     if (!response.ok) {
-      throw new Error('Failed to fetch data')
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
-
-    house.value = await response.json()
+    
+    houses.value = await response.json();
+    console.log(houses.value); 
+    
   } catch (err) {
-    error.value = err.message
+    error.value = err.message;
+    console.error('Error fetching houses:', err);
   } finally {
-    loading.value = false
+    loading.value = false; 
   }
 })
 </script>
 
 <template>
   <main>
-    <div v-if="loading">Loading data…</div>
-    <div v-else-if="error">Error: {{ error }}</div>
+    <p v-if="loading">Loading houses…</p>
+    <p v-else-if="error">Error: {{ error }}</p>
 
-    <div v-else>
-      <h2>{{ house.location.city }}</h2>
-      <p>Price: €{{ house.price }}</p>
-      <p>Bedrooms: {{ house.rooms.bedrooms }}</p>
-    </div>
+    <ul v-else-if="houses">
+      <li v-for="house in houses" :key="house.id">
+        {{ house.location.city }} – €{{ house.price.toLocaleString() }}
+      </li>
+    </ul>
   </main>
 </template>
