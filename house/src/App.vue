@@ -12,7 +12,8 @@ import NotFound from './NotFound.vue'
 const routes = {
   '/': Home,
   '/about': About,
-  '/houses': Houses
+  '/houses': Houses,
+  '/houses/:id':  Detailpage
 }
 
 const currentPath = ref(window.location.hash)
@@ -36,8 +37,6 @@ const currentView = computed(() => {
         <a href="#/houses">Houses</a>
         <a href="#/about">About</a>
     </div>
-  <main>
-  </main>
     <component :is="currentView" />
 </template>
 

@@ -37,15 +37,22 @@ onMounted(async () => {
 <template>
     <main>
         <div class="banner-home">
-        <li v-for="house in houses" :key="house.id">
-        <img :src="house.image" alt="House image">
-      </li>
+        <div v-for="house in houses" :key="house.id">
+        <img :src="house.image" alt="House image" width="1800px">
+        </div>
             
         </div>
         <h1>Home</h1>
         <p>Welcome on the house page</p>
 
         <div class="recommended-houses">
+            <article>
+                <div v-for="house in houses" :key="house.id">
+                    <a>
+                        <img :src="house.image" alt="House image" width="250px">
+                    </a>
+                </div>
+            </article>
         </div>
     </main>
 </template>
@@ -59,4 +66,21 @@ onMounted(async () => {
         left: 0;
         top: 0;
     }
+
+    .banner-home {
+    width: 100vw;
+    height: 20vh;
+    overflow: hidden;
+    margin-left: -100px;
+
+    div {
+        width: 100vw;
+        position: relative;
+    }
+}
+
+.recommended-houses article {
+    display: flex;
+
+}
 </style>

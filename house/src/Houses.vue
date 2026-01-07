@@ -41,8 +41,27 @@ onMounted(async () => {
 
     <ul v-else-if="houses">
       <li v-for="house in houses" :key="house.id">
-        {{ house.location.city }} – €{{ house.price.toLocaleString() }}
+
+        <img :src="house.image" alt="House image" width="250px">
+
+        <h2> {{ house.location.street }} {{ house.location.houseNumber }} </h2>
+
+        <p> €{{ house.price.toLocaleString() }} </p> 
+
+        <p> {{ house.location.zip }}</p>
+
+        <img src="./assets/icons/bed.svg">
+                <p> {{ house.rooms.bed }}</p>
+        <img src="./assets/icons/bath.svg">
+                <p> {{ house.rooms.bath }}</p>
+        <img src="./assets/icons/size.svg">
+
+        
       </li>
     </ul>
   </main>
 </template>
+
+<style>
+
+</style>

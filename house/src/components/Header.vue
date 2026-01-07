@@ -64,6 +64,7 @@ header {
     justify-content: space-between;
     border: black solid 1px;
     align-items: center;
+    z-index: 2;
 
     @media (max-width: 720px) {
         justify-content: center;
@@ -137,4 +138,6 @@ input[type="reset"] {
 .active {
     background-color: var(--primary-color-light);;
 }
+
+
 </style>
