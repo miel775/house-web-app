@@ -42,7 +42,7 @@ onMounted(async () => {
     <p v-if="loading">Loading houses…</p>
     <p v-else-if="error">Error: {{ error }}</p>
 
-    <ul v-else>
+    <ul v-else class="house-listings">
       <li v-for="house in houses" :key="house.id">
         <HouseListing 
             :image="house.image"
@@ -56,3 +56,27 @@ onMounted(async () => {
     </ul>
   </main>
 </template>
+
+<style>
+  ul {
+    container: li/ inline-size;
+  }
+
+  @container li (width > 720px) {
+  .li {
+    display: flex;
+  }
+}
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .house-listings {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5em;
+  }
+</style>
