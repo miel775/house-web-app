@@ -5,16 +5,9 @@ const houses = ref([])
 const error = ref(null)
 const loading = ref(false)
 
-const routes = {
-  '/': Home,
-  '/about': About,
-  '/houses': Houses
-}
-
-
 onMounted(async () => {
   loading.value = true;
-
+  
   try {
     const response = await fetch(
       'https://api.intern.d-tt.nl/api/houses',
@@ -24,25 +17,28 @@ onMounted(async () => {
         }
       }
     )
-
+    
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-
+    
     houses.value = await response.json();
-    console.log(houses.value);
-
+    console.log(houses.value); 
+    
   } catch (err) {
     error.value = err.message;
     console.error('Error fetching houses:', err);
   } finally {
-    loading.value = false;
+    loading.value = false; 
   }
 })
 </script>
 
 <template>
   <main>
+    <div class="navigation-bar">
+      
+    </div>
     <p v-if="loading">Loading houses…</p>
     <p v-else-if="error">Error: {{ error }}</p>
 
