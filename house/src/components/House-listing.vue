@@ -1,25 +1,33 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed } from 'vue';
+const props = defineProps({
+  image: String,
+  streetname: String,
+  price: [Number, String],
+  zip: [Number, String],
+  bedAmount: [Number, String],
+  bathAmount: [Number, String],
+  size: [Number, String]
+})
 </script>
 
 <template>
-    <div class="navigation-bar">
-        <button>
-            <img src="../house/src/assets/icons/back.svg">
-        </button>
+    <div>
+        <img :src="props.image" alt="`House at ${props.streetname}`" width="250px">
 
-        <div class="navigation-bar-input-fields">
-            <form>
-                <input type="textfield" length="10" placeholder="search for houses">
-            </form>
+        <h2>  </h2>
+        <h2> {{ props.streetname }} </h2>
 
-            <div>
-                <p> Sort by</p>
-            </div>
+        <div class="house-listing-details">
+          <p> €{{ props.price }}</p>
 
-            <button>
-                <img src="../house/src/assets/icons/add.svg">
-            </button>
+          <p> {{ props.zip }}</p>
+          <img src="./assets/icons/bed.svg">
+          <p>{{ props.bedAmount }}</p>
+          <img src="./assets/icons/bath.svg">
+          <p>{{ props.bathAmount }}</p>
+          <img src="./assets/icons/size.svg">
+          <p> {{ props.size }} </p>
         </div>
     </div>
 </template>

@@ -1,5 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
+import NavigationBar from './components/navigation-bar.vue'
+import HouseListing from './components/House-listing.vue'
 
 const houses = ref([])
 const error = ref(null)
@@ -36,29 +38,20 @@ onMounted(async () => {
 
 <template>
   <main>
-    <div class="navigation-bar">
-      
-    </div>
+    <NavigationBar />
     <p v-if="loading">Loading houses…</p>
     <p v-else-if="error">Error: {{ error }}</p>
 
     <ul v-else>
       <li v-for="house in houses" :key="house.id">
-
-        <img :src="house.image" alt="House image" width="250px">
-
-        <h2> {{ house.location.street }} {{ house.location.houseNumber }} </h2>
-
-        <div class="house-listing-details">
-          <p> €{{ house.price.toLocaleString() }} </p>
-          <p> {{ house.location.zip }}</p>
-          <img src="./assets/icons/bed.svg">
-          <p>{{ house.rooms.bed }}</p>
-          <img src="./assets/icons/bath.svg">
-          <p>{{ house.rooms.bath }}</p>
-          <img src="./assets/icons/size.svg">
-          <p> {{ house.size }} </p>
-        </div>
+        <HouseListing 
+            :image="house.image"
+            :streetname="`${house.location.street} ${house.location.houseNumber}`"
+            :price="house.price"
+            :zip="house.location.zipCode"
+            :bedAmount="house.bedrooms"
+            :bathAmount="house.bathrooms"
+            :size="house.size"></HouseListing>
       </li>
     </ul>
   </main>
