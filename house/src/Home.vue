@@ -37,7 +37,7 @@ onMounted(async () => {
 <template>
     <main>
 <div class="banner-home" v-if="houses.length">
-  <img :src="houses[0].image" alt="House image">
+  <img :src="houses[1].image" alt="House image">
 </div>
         <h1>Home</h1>
         <p>Welcome on the house page</p>
@@ -65,13 +65,13 @@ onMounted(async () => {
     }
 
     .banner-home {
-    width: 100vw;
-    height: 20vh;
+    height: 25vh;
     overflow: hidden;
     margin-left: -100px;
 
-    div {
-        width: 100vw;
+    img {
+        width: 110vw;
+        top: -100px;
         position: relative;
     }
 }

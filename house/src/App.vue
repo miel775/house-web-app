@@ -7,14 +7,12 @@ import Home from './Home.vue'
 import Houses from './Houses.vue'
 import About from './About.vue'
 import NotFound from './NotFound.vue'
-import Detailpage from './components/slug.vue'
 
 // routing of the housing app
 const routes = {
   '/': Home,
   '/about': About,
   '/houses': Houses,
-  '/houses/:id':  Detailpage
 }
 
 const currentPath = ref(window.location.hash)
@@ -66,10 +64,5 @@ header {
     place-items: flex-start;
     flex-wrap: wrap;
   }
-}
-
-main {
-  position: absolute;
-  top: 150px; 
 }
 </style>

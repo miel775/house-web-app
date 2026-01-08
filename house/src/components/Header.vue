@@ -45,6 +45,10 @@ function toggleDropdown() {
         </button>
     </header>
 
+    <div class="header-block">
+
+    </div>
+
     <div class="dropdown">
       <a href="#/" :class="{ active: isHomeActive }">Home</a>
       <a href="#/houses" :class="{ active: isHousesActive }">Houses</a>
@@ -137,6 +141,10 @@ input[type="reset"] {
 
 .active {
     background-color: var(--primary-color-light);;
+}
+
+.header-block {
+    height: 10vh;
 }
 
 

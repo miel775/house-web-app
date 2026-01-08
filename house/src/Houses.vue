@@ -5,6 +5,13 @@ const houses = ref([])
 const error = ref(null)
 const loading = ref(false)
 
+const routes = {
+  '/': Home,
+  '/about': About,
+  '/houses': Houses
+}
+
+
 onMounted(async () => {
   loading.value = true;
 
@@ -60,5 +67,3 @@ onMounted(async () => {
     </ul>
   </main>
 </template>
-
-<style></style>
