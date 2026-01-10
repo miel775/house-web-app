@@ -1,5 +1,19 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, onMounted } from 'vue'
+
+onMounted(async () => {
+
+let houses = []
+
+// seleecteer de zoekbalk
+const searchInput = document.querySelector("[data-search]")
+
+// wanneer je iets invult in de zoekbalk 
+searchInput.addEventListener("input", (e) => {
+    const value = e.target.value
+    console.log(value)
+})
+})
 </script>
 
 <template>
@@ -11,7 +25,8 @@ import { ref, computed } from 'vue'
 
         <div class="navigation-bar-input-fields">
             <form class="navigation-bar-search-bar">
-                <input type="textfield" placeholder="Search for houses">
+                <label for="search">Zoek naar huizen</label>
+                <input type="search" placeholder="Zoek naar huizen" data-search>
             </form>
 
             <button class="navigation-bar-card">

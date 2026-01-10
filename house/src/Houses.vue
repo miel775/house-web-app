@@ -6,6 +6,7 @@ import HouseListing from './components/House-listing.vue'
 const houses = ref([])
 const error = ref(null)
 const loading = ref(false)
+const query = ref('')
 
 onMounted(async () => {
   loading.value = true;
@@ -32,6 +33,9 @@ onMounted(async () => {
     console.error('Error fetching houses:', err);
   } finally {
     loading.value = false; 
+  }
+  return {
+    house.location.street: houses.
   }
 })
 </script>
@@ -63,7 +67,7 @@ onMounted(async () => {
     margin-left: -3%;
     padding: 0;
 
-    
+
   }
 
   .house-listings {
