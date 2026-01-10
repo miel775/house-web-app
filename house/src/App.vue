@@ -31,16 +31,13 @@ const currentView = computed(() => {
 
 <template>
   <Header></Header>
-    <div class="dropdown" on:click="">
-        <a href="#/houses">Houses</a>
-        <a href="#/about">About</a>
-    </div>
     <component :is="currentView" />
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
+main {
+  margin-left: 0;
+
 }
 
 .logo {

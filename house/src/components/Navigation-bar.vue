@@ -4,109 +4,108 @@ import { ref, computed } from 'vue'
 
 <template>
     <div class="navigation-bar">
-        <button>
+        <div class="navigation-bar-one">
+        <a href="/">
             <img  class="icon" src="../assets/icons/back.svg">
-        </button>
+        </a>
 
         <div class="navigation-bar-input-fields">
-            <form>
-                <input type="textfield" length="10" placeholder="search for houses">
+            <form class="navigation-bar-search-bar">
+                <input type="textfield" placeholder="Search for houses">
             </form>
 
-            <div class="card">
+            <button class="navigation-bar-card">
                 <p> Sort by</p>
-            </div>
-
-            <button>
-                <img class="icon" src="../assets/icons/add.svg">
             </button>
         </div>
+        </div>
+
+        <div class="navigation-bar-two">
+            <a href="/add">
+                <img class="icon" src="../assets/icons/add.svg">    
+            </a>
+        </div>
+    </div>
+
+    <div class="navigation-bar-bottom">
+        <a href="/home">
+            <img  class="icon" src="../assets/icons/back.svg">
+        </a>
+
+        <a href="/add">
+            <img class="icon" src="../assets/icons/add.svg">
+        </a>
     </div>
 </template>
 
 <style scoped>
 
 .navigation-bar {
-    margin-left: 2em;
     display: flex;
-    gap: 1em;
     padding: 1em;
-    height: 18vh;
-    margin-left: -3vw;
-    background-color: var(--primary-color-light);
+    height: 8vh;
+    background-color: var(--primary-color-lightest);
+    justify-content: space-between;
     align-items: center;
+}
 
-    @media (max-width: 720px) {
-        display: none;
+.navigation-bar-one {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    justify-content: flex-start;
+}
+
+.navigation-bar-two {
+    height: 2em;
+    width: 2em;
+}
+
+.navigation-bar-card {
+    height: 2em;
+    width: 10em;
+}
+
+.navigation-bar-input-fields {
+    display: flex;
+    height: 1em;
+    gap: 1em;
+    align-items: center;
+}
+
+.navigation-bar-search-bar {
+    width: 30vw;
+
+    input {
+        width: 30vw;
+        height: 2em;
     }
 }
 
-.avigation-bar-card {
-    height: 1em;
-    width: fit-content;
-    background-color: var(--);
-}
-
-a {
-    color: black;
-    width: fit-content;
-    background-color: var(--primary-color-dark);
+/* navigation-bar-bottom */
+.navigation-bar-bottom {
+    background-color: var(--primary-color-lightest);
+    display: flex;
+    justify-content: space-around;
     padding: 1em;
-    border: black solid 2px;
-    font-family: 'Monsterrat Bold';
-    text-decoration: none;
-}
-
-/* removing style button */
-button,
-input[type="submit"],
-input[type="reset"] {
-    background: none;
-    color: inherit;
-    border: none;
-    padding: 0;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
-}
-
-.dropdown {
-    display: none;
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+    width: 100vw;
 
     a {
-        width: 100vw;
+        background-color: var(--primary-color-lighter);
+        height: 2em;
+        width: 2em;
+        padding: 0.5em;
+        border: var(--border-black);
     }
-}
 
-.open {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 100px;
-    left: 0;
-}
-
-.logo-icon {
-    margin-right: 1em;
-
-    @media (max-width: 720px) {
+        @media (min-width: 720px) {
         display: none;
     }
 }
 
-.dropdownbutton {
-    @media (min-width: 720px) {
-        display: none;
-    }
-}
-
-.active {
-    background-color: var(--primary-color-light);;
-}
-
-.header-block {
-    height: 10vh;
-}
 
 
 </style>

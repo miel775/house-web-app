@@ -1,8 +1,11 @@
 :root {
   /* element colors */
-  --primary-color-light: #ffaca1;
+    --primary-color-lightest: #faccc6;
+  --primary-color-lighter: #ffbfb7;
+  --primary-color-light: #ECA399;
   --primary-color: #EB5440;
-  --primary-color-dark: #ad392a;
+  --primary-color-dark: #c65d4f;
+  --primary-color-darker: #ad392a;
 
   --secondairy-color: #4A4B4C;
   --tertairy-color: #E8E8E8;
@@ -17,21 +20,6 @@
 
   --border-black: black solid 2px;
 }
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    background-color: var(--background-two);
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
-}
-
 
 @font-face {
   font-family: 'Monsterrat Bold';
@@ -157,6 +145,21 @@ input {
   height: 2%;
   background-color: var(--tertairy-color);
   border: var(--border-black);
+}
+
+button {
+  background-color: var(--primary-color);
+  border: var(--border-black);
+  font-family: "Monsterrat Bold";
+  font-size: 18px;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: 720px) {
+    font-size: 14px;
+  }
 }
 
 

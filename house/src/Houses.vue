@@ -58,25 +58,17 @@ onMounted(async () => {
 </template>
 
 <style>
-  ul {
-    container: li/ inline-size;
-  }
-
-  @container li (width > 720px) {
-  .li {
-    display: flex;
-  }
-}
   li {
     list-style: none;
-    margin: 0;
+    margin-left: -3%;
     padding: 0;
+
+    
   }
 
   .house-listings {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 5em;
+    gap: 1em;
   }
 </style>

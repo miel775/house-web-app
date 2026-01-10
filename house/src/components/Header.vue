@@ -31,9 +31,9 @@ function toggleDropdown() {
 <template>
     <header>
         <div class="navigation-bar">
-      <a href="#/" :class="{ active: isHomeActive }">Home</a>
-      <a href="#/houses" :class="{ active: isHousesActive }">Houses</a>
-      <a href="#/about" :class="{ active: isAboutActive }">About</a>
+            <a href="#/" :class="{ active: isHomeActive }">Home</a>
+            <a href="#/houses" :class="{ active: isHousesActive }">Houses</a>
+            <a href="#/about" :class="{ active: isAboutActive }">About</a>
         </div>
 
         <div class="logo-icon">
@@ -58,7 +58,7 @@ function toggleDropdown() {
 
 <style scoped>
 header {
-    position: fixed;
+        position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
@@ -117,6 +117,7 @@ input[type="reset"] {
         z-index: 2;
     }
 }
+
 
 .open {
     display: flex;

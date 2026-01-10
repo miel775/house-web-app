@@ -39,7 +39,9 @@ const props = defineProps({
             <img class="icon" src="../assets/icons/size.svg">
             <p> {{ props.size }} m² </p>
           </div>
+          <div class="house-listing-button-area">
                   <button class="house-listing-button"> Bekijk </button>
+            </div>
         </div>
 
     </div>
@@ -54,8 +56,7 @@ const props = defineProps({
 
 .house-listing {
     background-color: var(--primary-color-light);
-    width: 80vw;
-    padding: 2em;
+    padding: 1em;
     display: grid;
     grid-template-columns: 1fr 70%;
     border: var(--border-black);
@@ -87,8 +88,15 @@ const props = defineProps({
 
   .house-listing {
     display: grid;
+    margin-right: 4%;
     grid-template-columns: 1fr;
   }
+}
+
+.house-listing-grid-one {
+  height: 100%;
+
+  
 }
 
 .house-listing-details {
@@ -105,6 +113,15 @@ const props = defineProps({
 .house-listing-details-2 div {
   display: flex;
   gap: 0.5em;
+}
+
+.house-listing-button {
+  width: 8em;
+}
+
+.house-listing-button-area {
+  display: flex;
+  justify-content: flex-end;
 }
 
 
