@@ -48,9 +48,9 @@ onMounted(async () => {
             :image="house.image"
             :streetname="`${house.location.street} ${house.location.houseNumber}`"
             :price="house.price"
-            :zip="house.location.zipCode"
-            :bedAmount="house.bedrooms"
-            :bathAmount="house.bathrooms"
+            :zip="`${house.location.zip} ${house.location.city}`"
+            :bedAmount="house.rooms.bedrooms"
+            :bathAmount="house.rooms.bathrooms"
             :size="house.size"></HouseListing>
       </li>
     </ul>

@@ -12,36 +12,76 @@ const props = defineProps({
 </script>
 
 <template>
+  <div class="house-container">
     <div class="house-listing">
-        <img :src="props.image" alt="`House at ${props.streetname}`" width="250px">
-
-        <h2>  </h2>
+      <div class="house-listing-grid-one">
+        <img class="house-listing-image" :src="props.image" alt="`House at ${props.streetname}`" width="250px">
         <h2> {{ props.streetname }} </h2>
-
-        <div class="house-listing-details">
-          <p> €{{ props.price }}</p>
-
+      </div>
+      <div class="house-listing-details">
+        <div class="house-lising-details-1">
+         <img class="icon" src="../assets/icons/location.svg">
           <p> {{ props.zip }}</p>
-          <img src="./assets/icons/bed.svg">
-          <p>{{ props.bedAmount }}</p>
-          <img src="./assets/icons/bath.svg">
-          <p>{{ props.bathAmount }}</p>
-          <img src="./assets/icons/size.svg">
-          <p> {{ props.size }} </p>
+
+          <img class="icon" src="../assets/icons/worth.svg">
+          <p> €{{ props.price }}</p>
+          </div>
+
+          <div class="house-listing-details-2">
+            <img class="icon" src="../assets/icons/bed.svg">
+            <p>{{ props.bedAmount }}</p>
+            <img class="icon" src="../assets/icons/bath.svg">
+            <p>{{ props.bathAmount }}</p>
+            <img class="icon" src="../assets/icons/size.svg">
+            <p> {{ props.size }} m² </p>
+          </div>
         </div>
     </div>
+  </div>
 </template>
 
 <style scoped>
+.house-container {
+  container-type: inline-size;
+  container-name: house-listing;
+}
+
 .house-listing {
-    background-color: var(--primary-color);
+    background-color: var(--primary-color-light);
     width: 80vw;
     padding: 2em;
+    display: grid;
+    grid-template-columns: 1fr 70%;
 
-    img {
+    .house-listing-image {
         width: max(250px, 100%);
         object-fit: cover;
     }
+}
+
+.house-listing-details-2 {
+    display: flex;
+    gap: 2em;
+}
+
+.house-listing-details {
+    display: flex;
+    gap: 2em;
+}
+
+.house-listing h2 {
+  font-size: 1em;
+}
+
+@container house-listing (width < 720px) {
+  .house-listing h2 {
+    font-size: 2em;
+  }
+
+  .house-listing {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }
 
 </style>

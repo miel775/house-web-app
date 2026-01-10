@@ -108,8 +108,8 @@ onMounted(async () => {
       height: 256px;
     }
 
-    img ~ .street-name-hover {
-      display: absolute;
+    img:hover ~ .street-name-hover {
+      display: block;
       top: 0;
       left: 0;
       z-index: 2;
@@ -120,6 +120,5 @@ onMounted(async () => {
 
 .street-name-hover {
   display: none;
-
 }
 </style>

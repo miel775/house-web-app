@@ -14,11 +14,14 @@
   --text-color-primary: #000000;
   --text-color-secondary: #4A4B4C;
   --text-color-hyperlink: #067BC2;
+
+  --border-black: black solid 2px;
 }
 
 @media (min-width: 1024px) {
   body {
     display: flex;
+    background-color: var(--background-two);
     place-items: center;
   }
 
@@ -142,6 +145,18 @@ input {
   @media (min-width: 720px) {
     font-size: 12px;
   }
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+}
+
+.card {
+  width: 10em;
+  height: 2%;
+  background-color: var(--tertairy-color);
+  border: var(--border-black);
 }
 
 

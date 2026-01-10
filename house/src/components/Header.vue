@@ -114,6 +114,7 @@ input[type="reset"] {
 
     a {
         width: 100vw;
+        z-index: 2;
     }
 }
 
@@ -144,8 +145,8 @@ input[type="reset"] {
 }
 
 .header-block {
+    display: inline-block;
     height: 10vh;
+    width: 100vw;
 }
-
-
 </style>

@@ -5,7 +5,7 @@ import { ref, computed } from 'vue'
 <template>
     <div class="navigation-bar">
         <button>
-            <img src="../house/src/assets/icons/back.svg">
+            <img  class="icon" src="../assets/icons/back.svg">
         </button>
 
         <div class="navigation-bar-input-fields">
@@ -13,45 +13,38 @@ import { ref, computed } from 'vue'
                 <input type="textfield" length="10" placeholder="search for houses">
             </form>
 
-            <div>
+            <div class="card">
                 <p> Sort by</p>
             </div>
 
             <button>
-                <img src="../house/src/assets/icons/add.svg">
+                <img class="icon" src="../assets/icons/add.svg">
             </button>
         </div>
     </div>
 </template>
 
 <style scoped>
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100px;
-    background-color: var(--primary-color);
-    display: flex;
-    justify-content: space-between;
-    border: black solid 1px;
-    align-items: center;
-    z-index: 2;
-
-    @media (max-width: 720px) {
-        justify-content: center;
-    }
-}
 
 .navigation-bar {
     margin-left: 2em;
     display: flex;
     gap: 1em;
+    padding: 1em;
+    height: 18vh;
+    margin-left: -3vw;
+    background-color: var(--primary-color-light);
     align-items: center;
 
     @media (max-width: 720px) {
         display: none;
     }
+}
+
+.avigation-bar-card {
+    height: 1em;
+    width: fit-content;
+    background-color: var(--);
 }
 
 a {
