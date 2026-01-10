@@ -18,14 +18,18 @@ const props = defineProps({
         <img class="house-listing-image" :src="props.image" alt="`House at ${props.streetname}`" width="250px">
         <h2> {{ props.streetname }} </h2>
       </div>
+
       <div class="house-listing-details">
         <div class="house-lising-details-1">
-         <img class="icon" src="../assets/icons/location.svg">
-          <p> {{ props.zip }}</p>
-
-          <img class="icon" src="../assets/icons/worth.svg">
-          <p> €{{ props.price }}</p>
+          <div class="house-lising-zip">
+            <img class="icon" src="../assets/icons/location.svg">
+            <p> {{ props.zip }}</p>
           </div>
+          <div class="house-lising-price">
+            <img class="icon" src="../assets/icons/worth.svg">
+            <p> €{{ props.price }}</p>
+          </div>
+        </div>
 
           <div class="house-listing-details-2">
             <img class="icon" src="../assets/icons/bed.svg">
@@ -35,7 +39,9 @@ const props = defineProps({
             <img class="icon" src="../assets/icons/size.svg">
             <p> {{ props.size }} m² </p>
           </div>
+                  <button class="house-listing-button"> Bekijk </button>
         </div>
+
     </div>
   </div>
 </template>
@@ -52,6 +58,7 @@ const props = defineProps({
     padding: 2em;
     display: grid;
     grid-template-columns: 1fr 70%;
+    border: var(--border-black);
 
     .house-listing-image {
         width: max(250px, 100%);
@@ -83,5 +90,22 @@ const props = defineProps({
     grid-template-columns: 1fr;
   }
 }
+
+.house-listing-details {
+  display: grid;
+  grid-template-rows: 40% 20% 10%;
+  margin: 1em;
+}
+
+.house-lising-details-1 div {
+  display: flex;
+  align-items: center;
+}
+
+.house-listing-details-2 div {
+  display: flex;
+  gap: 0.5em;
+}
+
 
 </style>
