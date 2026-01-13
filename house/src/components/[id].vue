@@ -5,6 +5,10 @@ const houses = ref(null)
 const error = ref(null)
 const loading = ref(false)
 
+export default {
+
+}
+
 onMounted(async () => {
   loading.value = true;
   
@@ -39,31 +43,31 @@ onMounted(async () => {
     <article>
     <!-- go back -->
     <img href="/houses" src="../assets/icons/back.svg">
-    <img :src="house.image" alt="House image" width="250px">
+    <img class="house-image" :src="house.image" alt="House image" width="250px">
 
-    <h2> {{ house.location.street }} {{ house.location.houseNumber }} </h2>
+    <h2 class="title"> {{ house.location.street }} {{ house.location.houseNumber }} </h2>
 
 
         <!-- postcode + city icon -->
-        <img href="/houses" src="../assets/icons/back.svg">
-        <p> €{{ house.price.toLocaleString() }} </p> 
+        <img href="/houses" src="../assets/icons/house.svg">
+        <p class="house-zip"> €{{ house.price.toLocaleString() }} </p> 
 
         <!-- price icon -->
         <img href="/houses" src="../assets/icons/back.svg">
-        <p> €{{ house.price.toLocaleString() }} </p> 
+        <p class="house-price"> €{{ house.price.toLocaleString() }} </p> 
 
         <img src="./assets/icons/size.svg">
-            <p> {{ house.size }} </p>
+            <p class="house-size"> {{ house.size }} </p>
 
             <!-- build in yyyy -->
         <img src="./assets/icons/size.svg">
-            <p> {{ house.buildIn }} </p>
+            <p class="house-year"> {{ house.buildIn }} </p>
 
 
         <img src="./assets/icons/bed.svg">
-                <p> {{ house.rooms.bed }}</p>
+                <p class="house-bed"> {{ house.rooms.bed }}</p>
         <img src="./assets/icons/bath.svg">
-                <p> {{ house.rooms.bath }}</p>
+                <p class="house-bath"> {{ house.rooms.bath }}</p>
 
 
 

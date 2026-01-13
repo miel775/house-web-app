@@ -1,18 +1,20 @@
 <script setup>
-import { ref, computed } from 'vue'
+import {createRouter, createWebHistory } from 'vue-router/auto'
 
+import Home from '@/pages/Home.vue'
+import About from '@/pages/About.vue'
+import Houses from '@/pages/Houses.vue'
+import NotFound from '@/pages/NotFound.vue'
+
+// components
 import Header from './components/Header.vue'
-
-import Home from './Home.vue'
-import Houses from './Houses.vue'
-import About from './About.vue'
-import NotFound from './NotFound.vue'
 
 // routing of the housing app
 const routes = {
   '/': Home,
   '/about': About,
   '/houses': Houses,
+  '/houses/:id': House Detailpage
 }
 
 const currentPath = ref(window.location.hash)
