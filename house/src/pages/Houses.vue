@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-import NavigationBar from './components/navigation-bar.vue'
-import HouseListing from './components/House-listing.vue'
+import NavigationBar from '../components/navigation-bar.vue'
+import HouseListing from '../components/House-listing.vue'
 
 const houses = ref([])
 const error = ref(null)
