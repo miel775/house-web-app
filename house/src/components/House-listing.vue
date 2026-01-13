@@ -40,8 +40,12 @@ const props = defineProps({
             <p> {{ props.size }} m² </p>
           </div>
           <div class="house-listing-button-area">
-                  <button class="house-listing-button"> Bekijk </button>
-            </div>
+<router-link
+  class="house-listing-button"
+  :to="`/houses/${props.id}`"
+>
+  Bekijk
+</router-link>            </div>
         </div>
 
     </div>
@@ -95,8 +99,6 @@ const props = defineProps({
 
 .house-listing-grid-one {
   height: 100%;
-
-  
 }
 
 .house-listing-details {

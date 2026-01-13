@@ -63,8 +63,6 @@ onMounted(async () => {
     list-style: none;
     margin-left: -3%;
     padding: 0;
-
-
   }
 
   .house-listings {
