@@ -1,21 +1,27 @@
 <script setup>
-import {createRouter, createWebHistory } from 'vue-router/auto'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 import Home from '@/pages/Home.vue'
-import About from '@/pages/About.vue'
 import Houses from '@/pages/Houses.vue'
+import About from '@/pages/About.vue'
 import NotFound from '@/pages/NotFound.vue'
+import HouseDetail from '@/pages/HouseDetail.vue'
 
 // components
 import Header from './components/Header.vue'
+import { createWebHashHistory } from 'vue-router'
 
 // routing of the housing app
-const routes = {
-  '/': Home,
-  '/about': About,
-  '/houses': Houses,
-  '/houses/:id': House Detailpage
-}
+export const router = createRouter({
+  history: createWebHashHistory(),
+  routes: [
+    { path: '/', name: 'Home', component: Home },
+    { path: '/about', name: 'About', component: About },
+    { path: '/houses', name: 'Houses', component: Houses },
+    { path: '/houses/:id', name: 'HouseDetail', component: HouseDetail, props: true },
+    { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
+  ],
+})
 
 const currentPath = ref(window.location.hash)
 
