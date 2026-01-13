@@ -52,7 +52,8 @@ onMounted(async () => {
             :zip="`${house.location.zip} ${house.location.city}`"
             :bedAmount="house.rooms.bedrooms"
             :bathAmount="house.rooms.bathrooms"
-            :size="house.size"></HouseListing>
+            :size="house.size"
+            :id="house.id"></HouseListing>
       </li>
     </ul>
   </main>

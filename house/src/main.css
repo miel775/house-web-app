@@ -144,12 +144,10 @@ input {
   width: 10em;
   height: 2%;
   background-color: var(--tertairy-color);
-  border: var(--border-black);
 }
 
 button {
   background-color: var(--primary-color);
-  border: var(--border-black);
   font-family: "Monsterrat Bold";
   font-size: 18px;
   padding: 1em;

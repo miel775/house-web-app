@@ -1,6 +1,8 @@
 <script setup>
-import { ref, computed } from 'vue';
+import { useRoute } from 'vue-router'
+
 const props = defineProps({
+  id: [String, Number],
   image: String,
   streetname: String,
   price: [Number, String],
@@ -9,6 +11,9 @@ const props = defineProps({
   bathAmount: [Number, String],
   size: [Number, String]
 })
+
+const route = useRoute()
+const houseId = route.params.id
 </script>
 
 <template>
@@ -63,7 +68,6 @@ const props = defineProps({
     padding: 1em;
     display: grid;
     grid-template-columns: 1fr 70%;
-    border: var(--border-black);
 
     .house-listing-image {
         width: max(250px, 100%);
