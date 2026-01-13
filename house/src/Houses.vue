@@ -34,9 +34,6 @@ onMounted(async () => {
   } finally {
     loading.value = false; 
   }
-  return {
-    house.location.street: houses.
-  }
 })
 </script>
 
