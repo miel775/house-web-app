@@ -58,15 +58,14 @@ function toggleDropdown() {
 
 <style scoped>
 header {
-        position: fixed;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100px;
-    background-color: var(--primary-color);
+    background-color: var(--primary-color-lighter);
     display: flex;
     justify-content: space-between;
-    border: black solid 1px;
     align-items: center;
     z-index: 2;
 
@@ -89,9 +88,8 @@ header {
 a {
     color: black;
     width: fit-content;
-    background-color: var(--primary-color-dark);
+    background-color: var(--primary-color);
     padding: 1em;
-    border: black solid 2px;
     font-family: 'Monsterrat Bold';
     text-decoration: none;
 }
@@ -142,7 +140,8 @@ input[type="reset"] {
 }
 
 .active {
-    background-color: var(--primary-color-light);;
+    background-color: var(--primary-color);
+    border: var(--border-black);
 }
 
 .header-block {

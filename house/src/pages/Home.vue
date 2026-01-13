@@ -71,7 +71,6 @@ onMounted(async () => {
     .banner-home {
     height: 25vh;
     overflow: hidden;
-    margin-left: -100px;
 
     img {
         width: 110vw;
@@ -90,7 +89,6 @@ onMounted(async () => {
 
 .recommended-houses {
   height: 30vh;
-  width: 100vw;
   position: absolute;
   overflow-y: scroll;
   background-color: var(--primary-color-light);

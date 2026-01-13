@@ -62,6 +62,9 @@ searchInput.addEventListener("input", (e) => {
     background-color: var(--primary-color-lightest);
     justify-content: space-between;
     align-items: center;
+    margin-left: -4em;
+    margin-right: -4em;
+    margin-top: -3em;
 }
 
 .navigation-bar-one {
@@ -107,20 +110,17 @@ searchInput.addEventListener("input", (e) => {
     bottom: 0;
     z-index: 2;
     width: 100vw;
+    margin-left: -4em;
 
     a {
         background-color: var(--primary-color-lighter);
         height: 2em;
         width: 2em;
         padding: 0.5em;
-        border: var(--border-black);
     }
 
         @media (min-width: 720px) {
         display: none;
     }
 }
-
-
-
 </style>

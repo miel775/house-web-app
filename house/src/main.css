@@ -23,32 +23,32 @@
 
 @font-face {
   font-family: 'Monsterrat Bold';
-  src: url(./fonts/Montserrat-Bold.ttf); /* url of the font */
+  src: url(assets/fonts/Montserrat-Bold.ttf); /* url of the font */
 }
 
 @font-face {
   font-family: 'Monsterrat Semibold';
-  src: url(./fonts/Montserrat-SemiBold.ttf); /* url of the font */
+  src: url(assets/fonts/Montserrat-SemiBold.ttf); /* url of the font */
 }
 
 @font-face {
   font-family: 'Monsterrat Medium';
-  src: url(./fonts/Montserrat-Medium.ttf); /* url of the font */
+  src: url(assets/fonts/Montserrat-Medium.ttf); /* url of the font */
 }
 
 @font-face {
   font-family: 'Monsterrat Medium Italic';
-  src: url(./fonts/Montserrat-MediumItalic.ttf); /* url of the font */
+  src: url(assets/fonts/Montserrat-MediumItalic.ttf); /* url of the font */
 }
 
 @font-face {
   font-family: 'Open Sans Semibold'; 
-  src: url(./fonts/OpenSans-SemiBold.ttf) /* url of the font */
+  src: url(assets/fonts/OpenSans-SemiBold.ttf) /* url of the font */
 }
 
 @font-face {
   font-family: 'Open Sans'; 
-  src: url(./fonts/OpenSans-Regular.ttf) /* url of the font */
+  src: url(assets/fonts/OpenSans-Regular.ttf) /* url of the font */
 }
 
 h1 {
@@ -162,6 +162,7 @@ button {
 
 main {
   margin: 3em;
+  background-color: var(--background-one);
 }
 
 
