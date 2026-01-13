@@ -9,7 +9,6 @@ import HouseDetail from '@/pages/HouseDetail.vue'
 
 // components
 import Header from './components/Header.vue'
-import { createWebHashHistory } from 'vue-router'
 
 // routing of the housing app
 export const router = createRouter({
@@ -39,14 +38,10 @@ const currentView = computed(() => {
 
 <template>
   <Header></Header>
-    <component :is="currentView" />
+  <router-view />
 </template>
 
 <style scoped>
-main {
-  margin-left: 0;
-
-}
 
 .logo {
   display: block;
