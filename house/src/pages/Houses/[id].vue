@@ -6,7 +6,16 @@ const error = ref(null)
 const loading = ref(false)
 
 export default {
-
+  props: {
+    url: {
+      type: String,
+      required: true
+    },
+    title: {
+      type: String,
+      required: true
+    }
+  }
 }
 
 onMounted(async () => {
@@ -37,7 +46,6 @@ onMounted(async () => {
   }
 })
 </script>
-
 <template>
   <main>
     <article>

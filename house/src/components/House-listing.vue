@@ -123,6 +123,8 @@ const houseId = route.params.id
 
 .house-listing-button {
   width: 8em;
+  height: 2em;
+  background-color: var(--primary-color-lighter);
 }
 
 .house-listing-button-area {

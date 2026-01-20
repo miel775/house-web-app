@@ -1,12 +1,8 @@
-<script>
+<script setup>
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 
-// use the route
-const route = useRoute()
-const id = route.params.id
-
-const house = ref([])
+const houses = ref([])
 const error = ref(null)
 const loading = ref(false)
 
@@ -15,7 +11,8 @@ onMounted(async () => {
   
   try {
     const response = await fetch(
-      'https://api.intern.d-tt.nl/api/houses',
+      'https://api.intern.d-tt.nl/api/houses/:id'
+,
       {
         headers: {
           'X-Api-Key': 'nvmE37kpr-xfUcAejPoM6_hC2Xbui5WO'
@@ -27,9 +24,7 @@ onMounted(async () => {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     
-    houses.value = await response.json();
-    console.log(houses.value); 
-    
+    houses.value = await response.json();    
   } catch (err) {
     error.value = err.message;
     console.error('Error fetching houses:', err);
@@ -41,60 +36,17 @@ onMounted(async () => {
 
 <template>
   <main>
-    <article>
-    <!-- go back -->
-    <img href="/houses" src="../assets/icons/back.svg">
-    <img class="house-image" :src="house.image" alt="House image" width="250px">
+   <router-link
+  class="house-listing-button"
+  :to="`/houses/`"
+>
+  <img src="/src/assets/icons/back.svg" width="48">
+</router-link>  
 
-    <h2 class="title"> {{ house.location.street }} {{ house.location.houseNumber }} </h2>
+   <div class="recommended-houses">
 
-
-        <!-- postcode + city icon -->
-        <img href="/houses" src="../assets/icons/house.svg">
-        <p class="house-zip"> €{{ house.price.toLocaleString() }} </p> 
-
-        <!-- price icon -->
-        <img href="/houses" src="../assets/icons/back.svg">
-        <p class="house-price"> €{{ house.price.toLocaleString() }} </p> 
-
-        <img src="./assets/icons/size.svg">
-            <p class="house-size"> {{ house.size }} </p>
-
-            <!-- build in yyyy -->
-        <img src="./assets/icons/size.svg">
-            <p class="house-year"> {{ house.buildIn }} </p>
+   </div>
 
 
-        <img src="./assets/icons/bed.svg">
-                <p class="house-bed"> {{ house.rooms.bed }}</p>
-        <img src="./assets/icons/bath.svg">
-                <p class="house-bath"> {{ house.rooms.bath }}</p>
-
-
-
-
-    </article>
-
-    <div class="recommended-houses">
-    <ul class="houses">
-        <li>
-        <img :src="house.image" alt="House image" width="250px">
-
-        <h2> {{ houses.location.street }} {{ house.location.houseNumber }} </h2>
-
-        <p> €{{ house.price.toLocaleString() }} </p> 
-
-        <p> {{ house.location.zip }}</p>
-
-        <img src="./assets/icons/bed.svg">
-                <p> {{ house.rooms.bed }}</p>
-        <img src="./assets/icons/bath.svg">
-                <p> {{ house.rooms.bath }}</p>
-        <img src="./assets/icons/size.svg">
-            <p> {{ house.size }} </p>
-
-      </li>
-    </ul>
-    </div>
   </main>
 </template>
