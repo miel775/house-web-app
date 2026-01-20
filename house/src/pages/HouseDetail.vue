@@ -34,7 +34,9 @@ onMounted(async () => {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     
-    house.value = await response.json()  
+const data = await response.json()
+house.value = data[0]
+    
   } catch (err) {
     error.value = err.message;
     console.error('Error fetching houses:', err);
@@ -53,8 +55,8 @@ onMounted(async () => {
   <img src="/src/assets/icons/back.svg" width="48">
 </router-link>  
 
-    <p v-else-if="house">
-      {{ house.zip }}
+    <p>
+      {{ house }}
     </p>
 
    <div class="recommended-houses">
