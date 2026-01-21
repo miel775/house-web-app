@@ -64,7 +64,7 @@ const houseId = route.params.id
 }
 
 .house-listing {
-    background-color: var(--primary-color-light);
+    background-color: var(--neutral-color);
     padding: 1em;
     display: grid;
     grid-template-columns: 1fr 70%;

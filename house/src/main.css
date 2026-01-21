@@ -135,6 +135,11 @@ input {
   }
 }
 
+
+body {
+  margin-left: 5em;
+  margin-right: 5em;
+}
 .icon {
   width: 32px;
   height: 32px;

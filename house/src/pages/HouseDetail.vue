@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
+import HouseListing from '/src/components/House-listing.vue'
 
 // useRoute to get the slug of a house
 const route = useRoute()
@@ -52,15 +53,36 @@ house.value = data[0]
   class="house-listing-button"
   :to="`/houses/`"
 >
-  <img src="/src/assets/icons/back.svg" width="48">
+  <img src="/src/assets/icons/back.svg" width="48" height="48">
+  <p> Back to overview</p>
 </router-link>  
 
-    <p>
-      {{ house }}
-    </p>
+    <div class="title-house-listing-detail">
+
+      <!-- all the data needed -->
+      {{ house.location.street }} {{ house.location.houseNumber }}
+
+      {{ house.location.zip }} {{ house.location.city }}
+
+      {{ house.price }}
+
+      {{ house.size }}
+
+      Build at {{ house.constructionYear }}
+
+      {{ house.rooms.bathrooms }}
+      {{ house.rooms.bedrooms }}
+
+      {{ house.hasGarage }}
+
+      {{ house.description }}
+    </div>
 
    <div class="recommended-houses">
 
+    <!-- <li v-for="item in items"> -->
+     <HouseListing />
+     <!-- </li> -->
    </div>
 
 
