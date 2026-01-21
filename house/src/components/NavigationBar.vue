@@ -1,19 +1,7 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+    import Searchtool from './Searchtool.vue';
+    import SortBy from './SortBy.vue';
 
-onMounted(async () => {
-
-let houses = []
-
-// seleecteer de zoekbalk
-const searchInput = document.querySelector("[data-search]")
-
-// wanneer je iets invult in de zoekbalk 
-searchInput.addEventListener("input", (e) => {
-    const value = e.target.value
-    console.log(value)
-})
-})
 </script>
 
 <template>
@@ -22,20 +10,18 @@ searchInput.addEventListener("input", (e) => {
         <a href="/">
             <img  class="icon" src="../assets/icons/back.svg">
         </a>
+        </div>
 
         <div class="navigation-bar-input-fields">
-            <form class="navigation-bar-search-bar">
-                <label for="search">Zoek naar huizen</label>
-                <input type="search" placeholder="Zoek naar huizen" data-search>
-            </form>
-
-            <button class="navigation-bar-card">
-                <p> Sort by</p>
-            </button>
+            <Searchtool />
         </div>
+
+        <div>
+            <SortBy />
         </div>
 
         <div class="navigation-bar-two">
+            <p>Create new</p>
             <a href="/add">
                 <img class="icon" src="../assets/icons/add.svg">    
             </a>
@@ -48,6 +34,7 @@ searchInput.addEventListener("input", (e) => {
         </a>
 
         <a href="/add">
+
             <img class="icon" src="../assets/icons/add.svg">
         </a>
     </div>
@@ -56,15 +43,12 @@ searchInput.addEventListener("input", (e) => {
 <style scoped>
 
 .navigation-bar {
+    width: 100%;
+    height: 4em;
     display: flex;
-    padding: 1em;
-    height: 8vh;
-    background-color: var(--primary-color-lightest);
     justify-content: space-between;
     align-items: center;
-    margin-left: -4em;
-    margin-right: -4em;
-    margin-top: -3em;
+    padding: 1em;
 }
 
 .navigation-bar-one {

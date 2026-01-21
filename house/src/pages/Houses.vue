@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-import NavigationBar from '../components/navigation-bar.vue'
-import HouseListing from '../components/House-listing.vue'
+import NavigationBar from '../components/NavigationBar.vue'
+import HouseListing from '../components/HouseListing.vue'
 
 const houses = ref([])
 const error = ref(null)
@@ -62,13 +62,11 @@ onMounted(async () => {
 <style>
   li {
     list-style: none;
-    margin-left: -3%;
-    padding: 0;
   }
 
   .house-listings {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 5em;
   }
 </style>

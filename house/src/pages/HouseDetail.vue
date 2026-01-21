@@ -1,7 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
-import HouseListing from '/src/components/House-listing.vue'
 
 // useRoute to get the slug of a house
 const route = useRoute()
@@ -80,9 +79,6 @@ house.value = data[0]
 
    <div class="recommended-houses">
 
-    <!-- <li v-for="item in items"> -->
-     <HouseListing />
-     <!-- </li> -->
    </div>
 
 
