@@ -1,29 +1,9 @@
 <script setup>
-import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
 
-const houses = [
-  {
-    name: 'Theolasingstraat 16 Amsterdam',
-    image: 'https://verbouw-gigant.nl/wp-content/uploads/2018/02/Kosten-huis-laten-bouwen-1024x576.jpg',
-    zip: 'NO90ND',
-    price: 140000,
-    bedrooms: 3,
-    bathrooms: 2,
-    size: 60
-  },
-  {
-    name: 'Another House',
-    image: 'https://via.placeholder.com/250',
-    zip: 'AB12CD',
-    price: 200000,
-    bedrooms: 4,
-    bathrooms: 3,
-    size: 120
-  }
-]
+
 </script>
 
 <template>
