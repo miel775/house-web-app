@@ -1,16 +1,16 @@
 <script setup>
 import { useRoute } from 'vue-router'
 
-// const props = defineProps({
-//   id: [String, Number],
-//   image: String,
-//   streetname: String,
-//   price: [Number, String],
-//   zip: [Number, String],
-//   bedAmount: [Number, String],
-//   bathAmount: [Number, String],
-//   size: [Number, String]
-// })
+const props = defineProps({
+  id: [String, Number],
+  image: String,
+  streetname: String,
+  price: [Number, String],
+  zip: [Number, String],
+  bedAmount: [Number, String],
+  bathAmount: [Number, String],
+  size: [Number, String]
+})
 
 const route = useRoute()
 const houseId = route.params.id
