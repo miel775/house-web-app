@@ -31,6 +31,8 @@ const houses = [
 </script>
 
 <template>
+
+  <h1> House overview page </h1>
     <main>
         <div class="house-container">
           <div  v-for="house in houses" class="house-listing" >
