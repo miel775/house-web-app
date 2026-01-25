@@ -33,35 +33,35 @@ const houses = [
 <template>
     <main>
         <div class="house-container">
-          <div  v-for="house in houses" class="house-listing">
+          <div  v-for="house in houses" class="house-listing" >
             <div class="house-listing-grid-one">
-              <img class="house-listing-image" :src="house.image" :alt="house.city" width="250">
-              <h2> {{ house.streetname }} {{ house.housenumber }} </h2>
+              <img class="house-listing-image" :src="house.image" :alt="house.city" width="250" tabindex="0">
+              <h2 tabindex="0"> {{ house.streetname }} {{ house.housenumber }} </h2>
             </div>
 
             <div class="house-listing-details">
               <div class="house-lising-details-1">
                 <div class="house-lising-zip">
-                  <img class="icon" src="../assets/icons/location.svg" alt="location icon">
-                  <p> {{ house.zip }} {{ house.city }}</p>
+                  <img tabindex="0" class="icon" src="../assets/icons/location.svg" alt="location icon">
+                  <p tabindex="0"> {{ house.zip }} {{ house.city }}</p>
                 </div>
                   <div class="house-lising-price">
-                  <img class="icon" src="../assets/icons/worth.svg" alt="money icon">
-                  <p> €{{ house.price }}</p>
+                  <img tabindex="0" class="icon" src="../assets/icons/worth.svg" alt="money icon">
+                  <p tabindex="0"> €{{ house.price }}</p>
                 </div>
             </div>
 
           <div class="house-listing-details-2">
-            <img class="icon" src="../assets/icons/bed.svg" alt="bed icon">
-            <p>{{ house.bedrooms }}</p>
-            <img class="icon" src="../assets/icons/bath.svg" alt="bath icon">
-            <p>{{ house.bathrooms }}</p>
-            <img class="icon" src="../assets/icons/size.svg" alt="size icon">
-            <p> {{ house.size }} m² </p>
+            <img tabindex="0" class="icon" src="../assets/icons/bed.svg" alt="bed icon">
+            <p tabindex="0">{{ house.bedrooms }}</p>
+            <img tabindex="0" class="icon" src="../assets/icons/bath.svg" alt="bath icon">
+            <p tabindex="0">{{ house.bathrooms }}</p>
+            <img tabindex="0" class="icon" src="../assets/icons/size.svg" alt="size icon">
+            <p tabindex="0"> {{ house.size }} m² </p>
           </div>
-          
+
           <div class="house-listing-button-area">
-            <a class="show-button" aria-label="go to next page">
+            <a tabindex="0" class="show-button" aria-label="go to next page">
               show
             </a>
           </div>
@@ -99,6 +99,11 @@ const houses = [
       width: 200vw;
       }
   }
+}
+
+div:focus {
+  scale: 1.25;
+  transition-duration: 0.2s;
 }
 
 .recommended-houses {
