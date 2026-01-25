@@ -32,25 +32,24 @@ const houses = [
 
 <template>
     <main>
-
         <div class="house-container">
-    <div  v-for="house in houses" class="house-listing">
-      <div class="house-listing-grid-one">
-        <img class="house-listing-image" :src="house.image" :alt="house.city" width="250">
-        <h2> {{ house.streetname }} {{ house.housenumber }} </h2>
-      </div>
+          <div  v-for="house in houses" class="house-listing">
+            <div class="house-listing-grid-one">
+              <img class="house-listing-image" :src="house.image" :alt="house.city" width="250">
+              <h2> {{ house.streetname }} {{ house.housenumber }} </h2>
+            </div>
 
-      <div class="house-listing-details">
-        <div class="house-lising-details-1">
-          <div class="house-lising-zip">
-            <img class="icon" src="../assets/icons/location.svg" alt="location icon">
-            <p> {{ house.zip }} {{ house.city }}</p>
-          </div>
-          <div class="house-lising-price">
-            <img class="icon" src="../assets/icons/worth.svg" alt="money icon">
-            <p> €{{ house.price }}</p>
-          </div>
-        </div>
+            <div class="house-listing-details">
+              <div class="house-lising-details-1">
+                <div class="house-lising-zip">
+                  <img class="icon" src="../assets/icons/location.svg" alt="location icon">
+                  <p> {{ house.zip }} {{ house.city }}</p>
+                </div>
+                  <div class="house-lising-price">
+                  <img class="icon" src="../assets/icons/worth.svg" alt="money icon">
+                  <p> €{{ house.price }}</p>
+                </div>
+            </div>
 
           <div class="house-listing-details-2">
             <img class="icon" src="../assets/icons/bed.svg" alt="bed icon">
@@ -60,16 +59,16 @@ const houses = [
             <img class="icon" src="../assets/icons/size.svg" alt="size icon">
             <p> {{ house.size }} m² </p>
           </div>
+          
           <div class="house-listing-button-area">
-<a>
-  Bekijk
-</a>
- </div>
+            <a class="show-button" aria-label="go to next page">
+              show
+            </a>
+          </div>
 
         </div>
-
-    </div>
-  </div>
+          </div>
+        </div>
     </main>
 </template>
 
