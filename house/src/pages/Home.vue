@@ -34,8 +34,8 @@ const houses = [
 
   <h1> House overview page </h1>
     <main>
-        <div class="house-container">
-          <div  v-for="house in houses" class="house-listing" >
+        <ul class="house-container">
+          <li  v-for="house in houses" class="house-listing" >
             <div class="house-listing-grid-one">
               <img class="house-listing-image" :src="house.image" :alt="house.city" width="250" tabindex="0">
               <h2 tabindex="0"> {{ house.streetname }} {{ house.housenumber }} </h2>
@@ -69,8 +69,8 @@ const houses = [
           </div>
 
         </div>
-          </div>
-        </div>
+        </li>
+        </ul>
     </main>
 </template>
 
