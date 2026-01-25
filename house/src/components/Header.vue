@@ -45,10 +45,6 @@ function toggleDropdown() {
         </button>
     </header>
 
-    <div class="header-block">
-
-    </div>
-
     <div class="dropdown">
       <a href="#/" :class="{ active: isHomeActive }">Home</a>
       <a href="#/houses" :class="{ active: isHousesActive }">Houses</a>
@@ -58,7 +54,7 @@ function toggleDropdown() {
 
 <style scoped>
 header {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100vw;

@@ -32,8 +32,9 @@ const houses = [
 
 <template>
 
-  <h1> House overview page </h1>
+
     <main>
+        <h1> House overview page </h1>
         <ul class="house-container">
           <li  v-for="house in houses" class="house-listing" >
             <div class="house-listing-grid-one">
@@ -75,6 +76,10 @@ const houses = [
 </template>
 
 <style>
+
+main {
+  margin-top: 10em;
+}
     .background {
         position: absolute;
         z-index: -1;
