@@ -43,21 +43,21 @@ const houses = [
       <div class="house-listing-details">
         <div class="house-lising-details-1">
           <div class="house-lising-zip">
-            <img class="icon" src="../assets/icons/location.svg">
+            <img class="icon" src="../assets/icons/location.svg" alt="location icon">
             <p> {{ house.zip }} {{ house.city }}</p>
           </div>
           <div class="house-lising-price">
-            <img class="icon" src="../assets/icons/worth.svg">
+            <img class="icon" src="../assets/icons/worth.svg" alt="money icon">
             <p> €{{ house.price }}</p>
           </div>
         </div>
 
           <div class="house-listing-details-2">
-            <img class="icon" src="../assets/icons/bed.svg">
+            <img class="icon" src="../assets/icons/bed.svg" alt="bed icon">
             <p>{{ house.bedrooms }}</p>
-            <img class="icon" src="../assets/icons/bath.svg">
+            <img class="icon" src="../assets/icons/bath.svg" alt="bath icon">
             <p>{{ house.bathrooms }}</p>
-            <img class="icon" src="../assets/icons/size.svg">
+            <img class="icon" src="../assets/icons/size.svg" alt="size icon">
             <p> {{ house.size }} m² </p>
           </div>
           <div class="house-listing-button-area">
