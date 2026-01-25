@@ -13,7 +13,7 @@ const houses = [
     size: 60,
     streetname: "Theolasingstraat",
     housenumber: "16",
-    city: "Amsterdam"
+    city: "Amsterdam",
   },
   {
     image: 'https://www.groothuisbouw.nl/thumbs/764×999×80×n/vraag-antwoord/2022/04/1.jpg',
@@ -36,7 +36,7 @@ const houses = [
         <div class="house-container">
     <div  v-for="house in houses" class="house-listing">
       <div class="house-listing-grid-one">
-        <img class="house-listing-image" :src="house.image" alt="`House at ${house.streetname}`" width="250">
+        <img class="house-listing-image" :src="house.image" :alt="house.city" width="250">
         <h2> {{ house.streetname }} {{ house.housenumber }} </h2>
       </div>
 
